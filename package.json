@@ -1,1 +1,27 @@
-{"name":"nodestreamer","version":"1.0.0","description":"","main":"index.js","scripts":{"test":"echo \"Error: no test specified\" && exit 1","dev":"nodemon index.js","start":"node index.js"},"keywords":[],"author":"","license":"ISC","dependencies":{"cors":"^2.8.5","express":"^4.18.2","fluent-ffmpeg":"^2.1.2","rtsp2hls":"^1.0.1","rtsp2web_hls":"^1.0.0"}}
+{
+    "name": "nodestreamer",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon index.js",
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "fluent-ffmpeg": "^2.1.2",
+        "rtsp2hls": "^1.0.1",
+        "rtsp2web_hls": "^1.0.0",
+        "simple-peer": "^9.11.1",
+        "socket.io": "^4.7.2",
+        "ws": "^8.14.1"
+    },
+    "devDependencies": {
+        "node-rtsp-stream": "^0.0.9"
+    }
+}

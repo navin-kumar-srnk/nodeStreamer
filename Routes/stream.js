@@ -2,9 +2,7 @@
 
 const router = require('express').Router()
 const {startFfmpeg,stopFfmpeg,getAllfeeds} =require('rtsp2hls')
-
-
-
+const {sendNotification} =require('../socket')
 // streamName
 // rtspUrl
 // from the body
@@ -20,8 +18,6 @@ return res.status(200).json({status:true,message:response})
 }
 
 })
-
-
 router.get('/getAllFeeds',(req,res)=>{
 try {
 
@@ -34,9 +30,6 @@ return res.status(200).json({status:'true',AllFeeds:streamList})
 
 })
 
-
-
-
 // streamname from query
 router.get('/deleteFeed',async(req,res)=>{
     try {
@@ -46,4 +39,16 @@ router.get('/deleteFeed',async(req,res)=>{
         return res.status(500).json({status:false,message:error.message})
     }
 })
+
+
+let detections=[]
+router.post('/addDetection',async(req,res)=>{
+  let body=req.body
+      detections.push(body)
+
+      sendNotification(detections)
+    return res.status(200).json({status:false,detections})
+})
+
+
 module.exports=router
