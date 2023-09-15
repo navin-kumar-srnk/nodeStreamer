@@ -50,5 +50,12 @@ router.post('/addDetection',async(req,res)=>{
     return res.status(200).json({status:false,detections})
 })
 
+router.get('/getAllDetections',async(req,res)=>{
+      return res.status(200).json({status:true,detections})
+  })
+  
+
+
+
 
 module.exports=router
