@@ -39,13 +39,6 @@ app.use('/live', express.static(path.join(homeDir, '/static')))
 
 
 
-
-
-
-
-
-
-
 // app.listen(port, () => {
 //   console.log(`Example app listening on port ${port}`)
 // })

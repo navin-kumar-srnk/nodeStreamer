@@ -9,6 +9,9 @@ const {sendNotification} =require('../socket')
 
 router.post('/addStream',async (req,res)=>{
 
+
+    // console.log(req.body);
+    // return 
 try {
 
   let response=  await startFfmpeg(req.body.streamName,req.body.rtspUrl)
@@ -33,7 +36,9 @@ return res.status(200).json({status:'true',AllFeeds:streamList})
 // streamname from query
 router.get('/deleteFeed',async(req,res)=>{
     try {
+        console.log(req?.query?.streamName);
         let response=await stopFfmpeg(req?.query?.streamName)
+        console.log("!!!!!!!!!!!!"+response);
         return res.send(response)
     } catch (error) {
         return res.status(500).json({status:false,message:error.message})

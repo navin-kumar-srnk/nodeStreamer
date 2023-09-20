@@ -1,0 +1,1 @@
+docker run --name rtsp-to-web --network host ghcr.io/deepch/rtsptoweb:latest 
